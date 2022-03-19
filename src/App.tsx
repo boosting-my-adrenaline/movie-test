@@ -58,7 +58,9 @@ const App: React.FC = () => {
     if (isMovie !== null) {
       setComs(
         coms.map((com, i) =>
-          i === isMovie ? [{ author: usernameInput, text }, ...com] : com
+          i === isMovie
+            ? [{ author: isAuth ? usernameInput : `guest`, text }, ...com]
+            : com
         )
       )
     }
